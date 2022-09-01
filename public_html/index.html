@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div style="text-align: center">
+            <h1>DOCENTE</h1>
+            <fieldset>
+                <legend> FORMULARIO DE DATOS PERSONALES</legend>
+
+                <form>
+                    <table align="center">
+                        <tr>
+                            <td>
+                                <label>NOMBRE</label>
+                            </td>
+                            <td>
+                                <input type="text" name="nom01" id="nom"/>
+                            </td>
+
+                        <tr/>
+
+                        <tr>
+                            <td>
+                                <label>APELLIDOS</label>
+                            </td>
+                            <td>
+                                <input type="text" name="ap" id="ap"/> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>EDAD</label>
+                            </td>
+                            <td>
+                                <input type="number" name="ed" id="edad"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>FECHA DE NACIMIENTO </label>
+                            </td>
+                            <td>
+                                <input type="date" name="fecha_nacimiento" id="fnac"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>   
+                                <label>CORREO</label>
+                            </td>
+                            <td>
+                                <input type="email" name="correo" id="correo"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>DIRECCION</label>
+                            </td>
+                            <td>
+                                <textarea id="dir" name="dir"></textarea>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-7 " style="text-align: center">
+
+                                <label>TITULOS ADQUIRIDOS</label>
+
+                                <div id="fTitulo">
+                                    <input type="text" name="Contacto1" id="tit"/><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-7 " style="text-align: center">
+
+
+                                <button type="button" onclick="agregarTit()">AGREGAR</button>
+                                <br>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-7 " style="text-align: center">
+
+                                <br>
+                                <button type="button" onclick="inTitulo()">INGRESAR</button>
+                                <p id="rTitu"></p>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </form>    
+            </fieldset>
+        </div>
+        <script>
+            function inTitulo() {
+                let tit = document.getElementById('tit');
+                let rc = document.getElementById('rTitu');
+                rc.innerHTML = tit.value + "<br>";
+
+                for (let i = 2; i < cont; i++) {
+                    let cN = document.getElementById('c' + i);
+                    rc.innerHTML += cN.value + " <br>";
+
+                }
+            }
+            let cont = 2;
+            function agregarTit() {
+
+                let dfTitulos = document.getElementById('fTitulo');
+                let newTit = "<label>Título:</label>";
+                newTit += "<input type='text' id='c" + cont + "'/>";
+                newTit += "<br>";
+
+                dfTitulos.innerHTML += newTit;
+                cont++;
+
+            }
+
+        </script>
+    </body>
+</html>
